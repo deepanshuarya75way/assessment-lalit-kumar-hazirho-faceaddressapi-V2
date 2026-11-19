@@ -1,10 +1,18 @@
 install uv globally using pip / or other using your system package manager python-uv
 
 #run the following to create a virtual environment
-uv venv --python3.13
+uv venv --python 3.10
 
 #activate the virtual environment
 source .venv/bin/activate
 
 #install dependencies
-uv pip install deepface tensorflow rapidocr_onnxruntime googlemaps fastapi uvicorn python-multipart toml tf-keras opencv-python-headless
+uv pip install deepface geopy dotenv tensorflow rapidocr_onnxruntime googlemaps fastapi uvicorn python-multipart toml tf-keras opencv-python-headless
+
+uv pip install streamlit requests streamlit-js-eval
+
+
+Run the apps:
+(streamlit app is just for testing)
+streamlit run app.py
+uvicorn main:app --reload
