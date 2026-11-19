@@ -241,7 +241,6 @@ async def validate_employee_geofence(
     max_distance_meters: float = Form(..., gt=0),
     captured_photo: UploadFile = File(...),
 ):
-    
     validate_image_type(captured_photo.content_type)
     validate_coordinates(target_lat, target_lon, "target")
     validate_coordinates(employee_lat, employee_lon, "employee")
@@ -259,6 +258,7 @@ async def validate_employee_geofence(
             employee_lon=employee_lon,
             max_distance_meters=max_distance_meters,
             photo_filename=captured_photo.filename,
+            temp_photo_path=temp_path,
         )
 
         payload = {
