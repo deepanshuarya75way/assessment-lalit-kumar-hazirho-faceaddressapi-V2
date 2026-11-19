@@ -29,6 +29,7 @@ def save_rejected_photo(
     temp_photo_path: Optional[str],
     original_filename: Optional[str] = None,
 ) -> Optional[str]:
+
     """Copies the temporary uploaded photo into logs/rejected_photos/ before cleanup."""
     if not temp_photo_path or not os.path.exists(temp_photo_path):
         return None
@@ -118,7 +119,7 @@ def evaluate_geofence_checkin(
             distance_meters=distance_meters,
             discrepancy_meters=discrepancy_meters,
             max_allowed_meters=max_distance_meters,
-            photo_filename=photo_filename,
+            #photo_filename=photo_filename,
             saved_photo_path=saved_photo_path,
         )
         return {
